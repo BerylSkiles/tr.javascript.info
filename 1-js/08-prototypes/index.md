@@ -1,0 +1,1 @@
+# Prototipler ve kalıtım

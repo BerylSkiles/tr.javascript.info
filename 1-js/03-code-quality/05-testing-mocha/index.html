@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- sonucları göstermek için mocha.css'i ekleyin -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+  <!-- mocha çatısını ekleyin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+  <script>
+    mocha.setup('bdd'); // basit bir şekilde sayfaya yükleyin
+  </script>
+  <!-- chai ekleyin -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+  <script>
+    // chai çok fazla özelliğe sahip. Mesela assert'i global hale getirin
+    let assert = chai.assert;
+  </script>
+</head>
+
+<body>
+
+  <script>
+    function us(x, n) {
+      /* fonksiyonlar yazılacak, şimdilik boş */
+    }
+  </script>
+
+  <!-- testlerin yazılı olduğu dosya -->
+  <script src="test.js"></script>
+
+  <!-- id'si mocha olan bir element test sonuçlarını gösterecek-->
+  <div id="mocha"></div>
+
+  <!-- testleri çalıştırın! -->
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+
+  <style>
+    #protector {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 99999999;
+    }
+  </style>
+
+</head>
+
+<body>
+
+<div id="protector">
+  <a href="/" target="_blank">Siteye git</a>
+</div>
+
+<script>
+
+  if (top.document.domain == document.domain) {
+    protector.remove();
+  }
+
+</script>
+
+  Bu yazı her zaman görünüt halde.
+
+  Ancak eğer sayfa başka bir alan adındaki bir dosyadan gelseydi üzerindeki div herhangi bir aksiyonu engellerdi.
+  <button onclick="alert(1)">Tıklama burada çalışmazdı</button>
+
+</body>
+</html>

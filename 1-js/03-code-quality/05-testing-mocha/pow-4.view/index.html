@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- sonuçları göstermek için mocha css eklendi -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.css">
+  <!-- mocha çatısı eklendi -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/3.2.0/mocha.js"></script>
+  <script>
+    // bdd stili test aktif edildi.
+    mocha.setup('bdd');
+  </script>
+  <!-- chai ekle -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/chai/3.5.0/chai.js"></script>
+  <script>
+    // chai birçok özelliğe sahiptir bunun yerine assert'i global yaparak kullanabilirsiniz.
+    let assert = chai.assert;
+  </script>
+</head>
+
+<body>
+
+  <script>
+    function us(x, n) {
+      let sonuc = 1;
+
+      for (let i = 0; i < n; i++) {
+        sonuc *= x;
+      }
+
+      return sonuc;
+    }
+  </script>
+
+  <!-- test kodları -->
+  <script src="test.js"></script>
+
+  <!-- id="mocha" elementi sonuçları gösterir.-->
+  <div id="mocha"></div>
+
+  <!-- testi çalıştır! -->
+  <script>
+    mocha.run();
+  </script>
+</body>
+
+</html>

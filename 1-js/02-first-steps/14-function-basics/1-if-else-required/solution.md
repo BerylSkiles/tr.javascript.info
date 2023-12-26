@@ -1,0 +1,1 @@
+Bir fark yoktur!

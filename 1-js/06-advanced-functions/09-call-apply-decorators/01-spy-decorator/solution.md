@@ -1,0 +1,1 @@
+Burada `calls.push(args)` ile `f.apply(this,args)`'a gönderilen tüm çağrıların argümanları tutulabilir.

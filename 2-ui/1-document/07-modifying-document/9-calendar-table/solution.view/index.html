@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      border: 1px solid black;
+      padding: 3px;
+      text-align: center;
+    }
+
+    th {
+      font-weight: bold;
+      background-color: #E6E6E6;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div id="calendar"></div>
+
+  <script>
+    function createCalendar(elem, year, month) {
+
+      let mon = month - 1; // JS'da aylar 0..11'dir, 1..12 değildir
+      let d = new Date(year, mon);
+
+      let table = '<table><tr><th>MO</th><th>TU</th><th>WE</th><th>TH</th><th>FR</th><th>SA</th><th>SU</th></tr><tr>';
+
+      // ilk satır için yer
+      // Pazartesi'den ayın ilk gününe kadar
+      // * * * 1  2  3  4
+      for (let i = 0; i < getDay(d); i++) {
+        table += '<td></td>';
+      }
+
+      // asıl tarihlerle <td> 
+      while (d.getMonth() == mon) {
+        table += '<td>' + d.getDate() + '</td>';
+
+        if (getDay(d) % 7 == 6) { // Pazar günü, haftanın son günü - yeni satır
+          table += '</tr><tr>';
+        }
+
+        d.setDate(d.getDate() + 1);
+      }
+
+      // ayın son günlerinden sonra, son satır için boş yer ekleyin
+      // 29 30 31 * * * *
+      if (getDay(d) != 0) {
+        for (let i = getDay(d); i < 7; i++) {
+          table += '<td></td>';
+        }
+      }
+
+      // tabloyu kapat
+      table += '</tr></table>';
+
+      elem.innerHTML = table;
+    }
+
+    function getDay(date) { //  0 (pazartesi günü)n'den 6 (pazar günü)'ne kadar gün numarası alın
+      let day = date.getDay();
+      if (day == 0) day = 7; // Pazar günü (0) son gün
+      return day - 1;
+    }
+
+    createCalendar(calendar, 2012, 9);
+  </script>
+
+</body>
+</html>

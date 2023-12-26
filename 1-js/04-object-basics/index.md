@@ -1,0 +1,1 @@
+# Objeler: Temel bilgiler
